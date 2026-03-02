@@ -1,7 +1,15 @@
-def Student_Grade_System(name: str, n1: int, n2: int, n3: int) -> str:
-    average = (n1 + n2 + n3) / 3
-    status = "Pass" if average >= 40 else "Fail"
-    return f"Average grade: {average:.2f}, Status: {status}"
+def Student_Grade_System(name, g1, g2, g3):
+    average = (g1 + g2 + g3) / 3
+    
+    # Truncate to 2 decimal places (NOT round)
+    average = int(average * 100) / 100
+    
+    if average >= 40:
+        status = "Pass"
+    else:
+        status = "fail"
+    
+    return f"Average grade: {average}, Status: {status}"
 
 
 if __name__ == '__main__':
